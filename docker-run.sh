@@ -23,11 +23,13 @@ mkdir -p "${OUTPUT_DIR}"
 # Build
 (cd "${SCRIPT_DIR}" && docker build --tag "generate_language_info_pages:latest" .)
 
+echo "Build finished"
+
 # Run
 docker run --rm -v "${TMP_DIR}":"/tmp" "generate_language_info_pages:latest"
 
 # Check output
-if [ -d "${TMP_DIR}"/* ]; then
+if [ -d "${TMP_DIR}" ]; then
   mv "${TMP_DIR}"/* "${OUTPUT_DIR}"
   echo -e "\nResult available in ${OUTPUT_DIR}"
   rmdir "${TMP_DIR}"
