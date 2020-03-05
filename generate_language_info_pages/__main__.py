@@ -59,7 +59,7 @@ def main():
     template = Template(
         filename='data/language_info.template.html', input_encoding='utf-8')
 
-    output_dir_path = Path(mkdtemp(prefix='langinfo_'))
+    output_dir_path = Path('/tmp/')
 
     warning("Creating language info pages in '{output_dir_path}'.".format(
         output_dir_path=output_dir_path))
