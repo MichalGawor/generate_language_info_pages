@@ -25,6 +25,8 @@ chmod -R +rwx "$TMP_DIR"
 # Build
 (cd "${SCRIPT_DIR}" && docker build --tag "generate_language_info_pages:latest" .)
 
+echo "Build finished"
+
 # Run
 docker run --rm -v "${TMP_DIR}":"/tmp" "generate_language_info_pages:latest"
 
