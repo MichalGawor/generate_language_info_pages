@@ -12,7 +12,7 @@ if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "travis" ]; then e
 
 # deploy
 git init
-git add ./lang_info_pages
+git add lang_info_pages
 git commit -m "Deploy lang info pages"
 
 git push --force https://${GITHUB_TOKEN}:x-oauth-basic@github.com/clarin-eric/generate_language_info_pages.git HEAD:lang-info-pages
