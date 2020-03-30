@@ -8,9 +8,7 @@ set -e
 # generate language info pages
 bash ./docker-run.sh ./lang_info_pages
 
-if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "travis" ]; then exit 0; fi
+if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "master" ]; then exit 0; fi
 
 # deploy generated pages to origin/lang-info-pages
 tar cvfz lang_info_pages.tar.gz lang_info_pages/
-
-git push --force https://${GITHUB_TOKEN}:x-oauth-basic@github.com/clarin-eric/generate_language_info_pages.git HEAD:lang-info-pages
