@@ -11,10 +11,6 @@ bash ./docker-run.sh ./lang_info_pages
 if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "master" ]; then exit 0; fi
 
 # deploy generated pages to origin/lang-info-pages
-tar cvfz lang_info_pages.tar.gz lang_info_pages/
-
-for file in .; do
-  echo "${file##*/}"
-done
+tar cvfz lang_info_pages lang_info_pages/
 
 echo "Travis tag: ${TAVIS_TAG}"
