@@ -1,0 +1,16 @@
+language: python
+python:
+  - "3.4"
+script: bash ./ci-deploy.sh
+before_deploy:
+  - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
+  - git tag $TRAVIS_TAG
+  - git config user.name "Travis CI"
+  - git config user.email "$COMMIT_AUTHOR_EMAIL"
+
+deploy:
+  provider: releases
+  api_key: GITHUB_TOKEN
+  file: ./language_info_pages.tar.gz
+  on:
+    tags: true
