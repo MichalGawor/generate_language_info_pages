@@ -11,7 +11,7 @@ before_deploy:
 script: bash ./ci-deploy.sh
 deploy:
   provider: releases
-  api_key: GITHUB_TOKEN
+  github_token: $GITHUB_TOKEN
   file: ./language_info_pages.tar.gz
   overwrite: true
   tag_name: $TRAVIS_TAG
