@@ -21,6 +21,6 @@ do
 done
 
 
-tar cvfz lang_info_pages ./lang_info_pages/
+tar -cvfz lang_info_pages ./lang_info_pages/
 
 echo "Travis tag: ${TAVIS_TAG}"
