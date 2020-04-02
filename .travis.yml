@@ -2,12 +2,10 @@ language: python
 python:
   - "3.4"
 before_deploy:
-  if ! [[ $TRAVIS_TAG ]]; then
-    export TRAVIS_TAG="0.2.0.a4" &&
-    git config --local user.name "$USER_NAME" &&
-    git config --local user.email "$USER_EMAIL" &&
-    git tag -a "$TRAVIS_TAG";
-  fi
+  - export TRAVIS_TAG="0.2.0.a1" &&
+  - git config --local user.name "$USER_NAME" &&
+  - git config --local user.email "$USER_EMAIL" &&
+  - git tag -a "$TRAVIS_TAG";
 script: bash ./ci-deploy.sh
 deploy:
   provider: releases
