@@ -3,21 +3,14 @@ python:
   - "3.4"
 env:
   - VERSION = "0.3.0"
-before_deploy:
-  - git config --local user.name "$USER_NAME"
-  - git config --local user.email "$USER_EMAIL"
-  - echo "tag $VERSION"
-  - export TRAVIS_TAG=$VERSION
-  - git tag $TRAVIS_TAG
-  - bash ./ci-deploy.sh
-
+  - TRAVIS_TAG = $VERSION
+script: bash ./ci-deploy.sh
 deploy:
   provider: releases
   github_token: $GITHUB_TOKEN
   file:
     - "language_info_pages.tar.gz"
   overwrite: true
-  tag_name: $TRAVIS_TAG
   on:
     tags: true
     all_branches: true
