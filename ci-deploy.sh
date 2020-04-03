@@ -15,4 +15,4 @@ if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "master" ]; then e
 # create tarball with generated language info pages
 tar -cvfz lang_info_pages ./lang_info_pages/
 
-echo "Travis tag: ${TAVIS_TAG}"
+echo "Travis tag: $TAVIS_TAG"
