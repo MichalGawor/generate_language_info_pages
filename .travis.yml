@@ -6,11 +6,12 @@ before_deploy:
   - git config --local user.email "$USER_EMAIL"
 env:
   - TRAVIS_TAG = "0.3.0.a0"
+script: bash ./ci-deploy.sh
 deploy:
-  script: bash ./ci-deploy.sh
   provider: releases
   github_token: $GITHUB_TOKEN
-  file: ./language_info_pages.tar.gz
+  file:
+    - "language_info_pages.tar.gz"
   overwrite: true
   tag_name: $TRAVIS_TAG
   on:
