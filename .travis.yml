@@ -2,8 +2,7 @@ language: python
 python:
   - "3.4"
 env:
-  - VERSION = "0.3.0"
-  - TRAVIS_TAG = $VERSION
+  - LANG_INFO_PAGES_TAG = "0.3.0"
 script: bash ./ci-deploy.sh
 deploy:
   provider: releases
