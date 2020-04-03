@@ -1,11 +1,15 @@
 language: python
 python:
   - "3.4"
+env:
+  - VERSION = "0.3.0"
 before_deploy:
   - git config --local user.name "$USER_NAME" &&
   - git config --local user.email "$USER_EMAIL"
-env:
-  - TRAVIS_TAG = "0.3.0.a0"
+  - echo "tag ${VERSION}"
+  - export TRAVIS_TAG=VERSION
+  - git tag $TRAVIS_TAG
+
 script: bash ./ci-deploy.sh
 deploy:
   provider: releases
