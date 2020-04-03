@@ -4,7 +4,7 @@ python:
 env:
   - VERSION = "0.3.0"
 before_deploy:
-  - git config --local user.name "$USER_NAME" &&
+  - git config --local user.name "$USER_NAME"
   - git config --local user.email "$USER_EMAIL"
   - echo "tag $VERSION"
   - export TRAVIS_TAG=$VERSION
