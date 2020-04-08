@@ -12,6 +12,6 @@ if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "master" ]; then e
 # deploy generated pages to origin/lang-info-pages
 
 # create tarball with generated language info pages
-tar -cvfz lang_info_pages-${LANG_INFO_PAGES_TAG} ./lang_info_pages/
+tar -czf lang_info_pages-${LANG_INFO_PAGES_TAG} ./lang_info_pages/
 
 echo "Travis tag: ${TAVIS_TAG}"
