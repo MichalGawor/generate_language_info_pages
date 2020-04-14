@@ -4,7 +4,7 @@ python:
 env:
   - LANGUAGE_PAGES="0.3.5"
 script:
-  - bash ./ci-deploy.sh
+  - sh -c ./ci-deploy.sh
 deploy:
   provider: releases
   github_token: $GITHUB_TOKEN
