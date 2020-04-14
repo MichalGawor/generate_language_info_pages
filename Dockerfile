@@ -14,4 +14,4 @@ RUN python setup.py install --user
 
 CMD ["ash", "-c", "cd /generate_language_info_pages && python -m 'generate_language_info_pages'"]
 
-CMD ["ash", "-c", "tar -czf lang_info_pages ./lang_info_pages/"]
+CMD ["ash", "-c", "tar -czf lang_info_pages lang_info_pages/"]
