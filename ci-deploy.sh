@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-echo "Travis tag: (${TAVIS_TAG})"
+echo "Travis tag: (${TRAVIS_TAG})"
 echo "Lang pages: ${LANGUAGE_PAGES}"
 
 # generate language info pages
