@@ -2,8 +2,9 @@ language: python
 python:
   - "3.4"
 env:
-  - LANG_INFO_PAGES_TAG = "0.3.0"
-script: bash ./ci-deploy.sh
+  - LANGUAGE_PAGES="0.3.5"
+script:
+  - bash ./ci-deploy.sh
 deploy:
   provider: releases
   github_token: $GITHUB_TOKEN
