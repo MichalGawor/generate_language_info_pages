@@ -7,7 +7,6 @@ script:
   - sh -x "./ci-build.sh"
 before_deploy:
   - sh -x "./ci-pre-deploy.sh"
-
 deploy:
   provider: releases
   github_token: $GITHUB_TOKEN
