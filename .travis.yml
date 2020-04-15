@@ -9,7 +9,7 @@ deploy:
   provider: releases
   github_token: $GITHUB_TOKEN
   file:
-    - "language_info_pages.tar.gz"
+    - "lang_info_pages_${LANGUAGE_PAGES_VERSION}.tar.gz"
   overwrite: true
   on:
     tags: true
