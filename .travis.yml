@@ -4,7 +4,10 @@ python:
 env:
   - LANGUAGE_PAGES_VERSION="0.3.5"
 script:
-  - sh -x "./ci-deploy.sh"
+  - sh -x "./ci-build.sh"
+before_deploy:
+  - sh -x "./ci-pre-deploy.sh"
+
 deploy:
   provider: releases
   github_token: $GITHUB_TOKEN
