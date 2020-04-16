@@ -38,4 +38,3 @@ if [ "$(ls -A $TMP_DIR)" ]; then
 else
   echo "ERROR: No result found in ${OUTPUT_DIR}"
 fi
-
