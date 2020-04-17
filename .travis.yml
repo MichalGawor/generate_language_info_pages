@@ -2,7 +2,7 @@ language: python
 python:
   - "3.4"
 env:
-  - LANGUAGE_PAGES_VERSION="0.3.6"
+  - LANGUAGE_PAGES_VERSION="0.4.0"
 script:
   - sh -x "./ci-build.sh"
 before_deploy:
