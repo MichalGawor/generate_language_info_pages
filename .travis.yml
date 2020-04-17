@@ -13,7 +13,6 @@ before_deploy:
 deploy:
   provider: releases
   github_token: $GITHUB_TOKEN
-  file: "./lang_info_pages_${LANGUAGE_PAGES_VERSION}.tar.gz"
   overwrite: true
   on:
     tags: true
