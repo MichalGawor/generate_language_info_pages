@@ -2,7 +2,7 @@ language: python
 python:
   - "3.4"
 env:
-  - LANGUAGE_PAGES_VERSION="0.4.0"
+  - LANG_INFO_PAGES_TAR = "lang_info_pages.tar.gz"
 script:
   - sh -x "./ci-build.sh"
 before_deploy:
@@ -13,7 +13,7 @@ before_deploy:
 deploy:
   provider: releases
   api_key: $GITHUB_TOKEN
-  file: "lang_info_pages_${LANGUAGE_PAGES_VERSION}.tar.gz"
+  file: "${LANG_INFO_PAGES_TAR}
   overwrite: true
   on:
     tags: true
