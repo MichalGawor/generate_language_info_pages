@@ -2,7 +2,7 @@ language: python
 python:
   - "3.4"
 env:
-  - LANG_INFO_PAGES_TAR = "lang_info_pages.tar.gz"
+  - LANG_INFO_PAGES_TAR="lang_info_pages.tar.gz"
 script:
   - sh -x "./ci-build.sh"
 before_deploy:
